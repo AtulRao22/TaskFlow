@@ -1,29 +1,15 @@
-/* ═══════════════════════════════════════════════════════
-   TodoList.css — Component styles for TaskFlow
-═══════════════════════════════════════════════════════ */
-
-/* ── Wrapper ─────────────────────────────────────────── */
 .tf-wrapper {
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 0;
   animation: tf-fade-in 0.5s ease;
 }
 
 @keyframes tf-fade-in {
-  from {
-    opacity: 0;
-    transform: translateY(16px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
-/* ── Header ──────────────────────────────────────────── */
 .tf-header {
   background: var(--bg-card);
   border: 1px solid var(--border);
@@ -85,11 +71,9 @@
 .tf-subtitle {
   color: var(--text-muted);
   font-size: 0.88rem;
-  font-weight: 400;
   margin-bottom: 1.4rem;
 }
 
-/* ── Progress bar ────────────────────────────────────── */
 .tf-progress-track {
   height: 6px;
   background: rgba(255, 255, 255, 0.07);
@@ -112,7 +96,6 @@
   font-weight: 500;
 }
 
-/* ── Input section ───────────────────────────────────── */
 .tf-input-section {
   padding: 1.25rem 2rem;
   background: var(--bg-secondary);
@@ -127,7 +110,6 @@
   display: flex;
   gap: 0.75rem;
   align-items: stretch;
-  transition: all 0.2s;
 }
 
 .tf-input {
@@ -166,19 +148,9 @@
 }
 
 @keyframes tf-shake {
-
-  0%,
-  100% {
-    transform: translateX(0);
-  }
-
-  25% {
-    transform: translateX(-5px);
-  }
-
-  75% {
-    transform: translateX(5px);
-  }
+  0%, 100% { transform: translateX(0); }
+  25%       { transform: translateX(-5px); }
+  75%       { transform: translateX(5px); }
 }
 
 .tf-btn-add {
@@ -209,10 +181,8 @@
   transform: translateY(0);
 }
 
-/* ── Filter tabs ─────────────────────────────────────── */
 .tf-filters {
   display: flex;
-  gap: 0;
   background: var(--bg-secondary);
   border-left: 1px solid var(--border);
   border-right: 1px solid var(--border);
@@ -257,7 +227,6 @@
   font-weight: 600;
 }
 
-/* ── List ────────────────────────────────────────────── */
 .tf-list {
   list-style: none;
   background: var(--bg-secondary);
@@ -268,7 +237,6 @@
   min-height: 60px;
 }
 
-/* ── Empty state ─────────────────────────────────────── */
 .tf-empty {
   display: flex;
   flex-direction: column;
@@ -277,14 +245,12 @@
   padding: 3rem 1rem;
   color: var(--text-muted);
   font-size: 0.9rem;
-  font-weight: 400;
 }
 
 .tf-empty-icon {
   font-size: 2.5rem;
 }
 
-/* ── Todo item ───────────────────────────────────────── */
 .tf-item {
   display: flex;
   align-items: center;
@@ -296,15 +262,8 @@
 }
 
 @keyframes tf-item-in {
-  from {
-    opacity: 0;
-    transform: translateX(-10px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+  from { opacity: 0; transform: translateX(-10px); }
+  to   { opacity: 1; transform: translateX(0); }
 }
 
 .tf-item:last-child {
@@ -324,11 +283,9 @@
   flex: 1;
   font-size: 0.95rem;
   color: var(--text-primary);
-  transition: color 0.2s;
   word-break: break-word;
 }
 
-/* ── Checkbox ────────────────────────────────────────── */
 .tf-checkbox {
   width: 22px;
   height: 22px;
@@ -359,7 +316,6 @@
   opacity: 0.85;
 }
 
-/* ── Delete button ───────────────────────────────────── */
 .tf-btn-delete {
   width: 32px;
   height: 32px;
@@ -383,7 +339,6 @@
   transform: scale(1.1);
 }
 
-/* ── Footer ──────────────────────────────────────────── */
 .tf-footer {
   display: flex;
   align-items: center;
@@ -434,7 +389,6 @@
   background: var(--danger-bg);
 }
 
-
 @media (max-width: 600px) {
   .tf-header {
     padding: 1.5rem 1.5rem 1.25rem;
@@ -464,22 +418,14 @@
   }
 }
 
-/* ── ≤ 480px (standard phones) ───────────────────────── */
 @media (max-width: 480px) {
-
-  /* Header */
   .tf-header {
     padding: 1.25rem 1rem 1rem;
     border-radius: 14px 14px 0 0;
   }
 
-  .tf-logo-icon {
-    font-size: 1.3rem;
-  }
-
-  .tf-logo-text {
-    font-size: 1.4rem;
-  }
+  .tf-logo-icon { font-size: 1.3rem; }
+  .tf-logo-text { font-size: 1.4rem; }
 
   .tf-stats-badge {
     font-size: 0.72rem;
@@ -491,7 +437,6 @@
     margin-bottom: 1rem;
   }
 
-  /* Input — stack vertically on phones */
   .tf-input-section {
     padding: 0.875rem 1rem;
   }
@@ -504,7 +449,6 @@
   .tf-input {
     width: 100%;
     font-size: 1rem;
-    /* prevent iOS auto-zoom (needs ≥16px) */
     padding: 0.8rem 1rem;
     border-radius: 10px;
   }
@@ -516,10 +460,8 @@
     border-radius: 10px;
     font-size: 0.95rem;
     min-height: 44px;
-    /* touch target */
   }
 
-  /* Filters */
   .tf-filters {
     padding: 0 1rem 0.875rem;
   }
@@ -530,7 +472,6 @@
     min-height: 40px;
   }
 
-  /* List items */
   .tf-item {
     padding: 0.875rem 1rem;
     gap: 0.65rem;
@@ -540,7 +481,6 @@
     font-size: 0.9rem;
   }
 
-  /* Checkbox & delete — larger touch targets */
   .tf-checkbox {
     width: 26px;
     height: 26px;
@@ -553,7 +493,6 @@
     min-width: 38px;
   }
 
-  /* Footer */
   .tf-footer {
     padding: 0.875rem 1rem;
     border-radius: 0 0 14px 14px;
@@ -576,40 +515,28 @@
     padding: 0.4rem 0.6rem;
   }
 
-  /* Attribution */
   .tf-attribution {
     font-size: 0.78rem;
     margin-top: 1rem;
   }
 }
 
-/* ── ≤ 360px (tiny phones) ───────────────────────────── */
 @media (max-width: 360px) {
   .tf-header {
     padding: 1rem 0.875rem 0.875rem;
     border-radius: 12px 12px 0 0;
   }
 
-  .tf-logo-text {
-    font-size: 1.25rem;
-  }
-
-  .tf-logo-icon {
-    font-size: 1.15rem;
-  }
+  .tf-logo-text { font-size: 1.25rem; }
+  .tf-logo-icon { font-size: 1.15rem; }
 
   .tf-stats-badge {
     font-size: 0.68rem;
     padding: 0.2rem 0.55rem;
   }
 
-  .tf-input-section {
-    padding: 0.75rem 0.875rem;
-  }
-
-  .tf-filters {
-    padding: 0 0.875rem 0.75rem;
-  }
+  .tf-input-section { padding: 0.75rem 0.875rem; }
+  .tf-filters       { padding: 0 0.875rem 0.75rem; }
 
   .tf-filter-btn {
     font-size: 0.75rem;
@@ -621,21 +548,16 @@
     gap: 0.55rem;
   }
 
-  .tf-item-text {
-    font-size: 0.85rem;
-  }
+  .tf-item-text { font-size: 0.85rem; }
 
   .tf-footer {
     padding: 0.75rem 0.875rem;
     border-radius: 0 0 12px 12px;
   }
 
-  .tf-attribution {
-    font-size: 0.74rem;
-  }
+  .tf-attribution { font-size: 0.74rem; }
 }
 
-/* ── Notch / safe-area support (iPhone X+) ───────────── */
 @supports (padding: max(0px)) {
   .tf-footer {
     padding-bottom: max(0.9rem, env(safe-area-inset-bottom));
@@ -648,46 +570,20 @@
   }
 }
 
-/* ── Disable hover effects on touch devices ──────────── */
 @media (hover: none) and (pointer: coarse) {
-  .tf-item:hover {
-    background: transparent;
-  }
-
-  .tf-btn-add:hover {
-    opacity: 1;
-    transform: none;
-    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.35);
-  }
-
-  .tf-btn-delete:hover {
-    transform: none;
-  }
-
-  .tf-checkbox:hover {
-    border-color: var(--border);
-    background: transparent;
-  }
-
-  .tf-filter-btn:hover:not(.tf-filter-btn--active) {
-    background: transparent;
-    color: var(--text-secondary);
-  }
-
-  .tf-btn-ghost:hover {
-    border-color: var(--border);
-    color: var(--text-secondary);
-    background: transparent;
-  }
+  .tf-item:hover     { background: transparent; }
+  .tf-btn-add:hover  { opacity: 1; transform: none; box-shadow: 0 4px 15px rgba(139, 92, 246, 0.35); }
+  .tf-btn-delete:hover  { transform: none; }
+  .tf-checkbox:hover { border-color: var(--border); background: transparent; }
+  .tf-filter-btn:hover:not(.tf-filter-btn--active) { background: transparent; color: var(--text-secondary); }
+  .tf-btn-ghost:hover { border-color: var(--border); color: var(--text-secondary); background: transparent; }
 }
 
-/* ── Attribution footer ──────────────────────────────── */
 .tf-attribution {
   margin-top: 1.25rem;
   text-align: center;
   font-size: 0.82rem;
   color: var(--text-muted);
-  font-weight: 400;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -703,27 +599,11 @@
 }
 
 @keyframes tf-heartbeat {
-
-  0%,
-  100% {
-    transform: scale(1);
-  }
-
-  14% {
-    transform: scale(1.3);
-  }
-
-  28% {
-    transform: scale(1);
-  }
-
-  42% {
-    transform: scale(1.2);
-  }
-
-  56% {
-    transform: scale(1);
-  }
+  0%, 100% { transform: scale(1); }
+  14%       { transform: scale(1.3); }
+  28%       { transform: scale(1); }
+  42%       { transform: scale(1.2); }
+  56%       { transform: scale(1); }
 }
 
 .tf-author {
