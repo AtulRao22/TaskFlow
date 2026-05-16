@@ -14,7 +14,6 @@ export default function TodoList() {
   const [filter, setFilter] = useState("All");
   const [error, setError] = useState("");
 
-  /* ── Actions ─────────────────────────────────────────── */
   const addNewTask = () => {
     const trimmed = newTodo.trim();
     if (!trimmed) {
@@ -41,7 +40,6 @@ export default function TodoList() {
   const deleteTodo = (id) =>
     setTodos((prev) => prev.filter((t) => t.id !== id));
 
-  // Toggle done (fix: bidirectional)
   const toggleDone = (id) =>
     setTodos((prev) =>
       prev.map((t) => (t.id === id ? { ...t, isDone: !t.isDone } : t))
@@ -53,7 +51,6 @@ export default function TodoList() {
   const clearCompleted = () =>
     setTodos((prev) => prev.filter((t) => !t.isDone));
 
-  /* ── Derived ─────────────────────────────────────────── */
   const filtered = todos.filter((t) => {
     if (filter === "Active") return !t.isDone;
     if (filter === "Completed") return t.isDone;
@@ -64,10 +61,8 @@ export default function TodoList() {
   const totalCount = todos.length;
   const progress = totalCount === 0 ? 0 : Math.round((doneCount / totalCount) * 100);
 
-  /* ── Render ──────────────────────────────────────────── */
   return (
     <div className="tf-wrapper">
-      {/* Header */}
       <header className="tf-header">
         <div className="tf-header-top">
           <div className="tf-logo">
@@ -82,7 +77,6 @@ export default function TodoList() {
         </div>
         <p className="tf-subtitle">Stay focused. Stay productive.</p>
 
-        {/* Progress bar */}
         <div className="tf-progress-track">
           <div
             className="tf-progress-fill"
@@ -92,7 +86,6 @@ export default function TodoList() {
         <span className="tf-progress-label">{progress}% complete</span>
       </header>
 
-      {/* Input */}
       <div className="tf-input-section">
         <div className={`tf-input-row ${error ? "tf-input-row--error" : ""}`}>
           <input
@@ -121,7 +114,6 @@ export default function TodoList() {
         {error && <p className="tf-error">{error}</p>}
       </div>
 
-      {/* Filter tabs */}
       <div className="tf-filters" role="tablist" aria-label="Filter tasks">
         {FILTERS.map((f) => (
           <button
@@ -136,7 +128,6 @@ export default function TodoList() {
         ))}
       </div>
 
-      {/* Todo list */}
       <ul className="tf-list" aria-label="Todo list">
         {filtered.length === 0 ? (
           <li className="tf-empty">
@@ -155,7 +146,6 @@ export default function TodoList() {
               key={todo.id}
               className={`tf-item ${todo.isDone ? "tf-item--done" : ""}`}
             >
-              {/* Checkbox */}
               <button
                 id={`check-${todo.id}`}
                 className={`tf-checkbox ${todo.isDone ? "tf-checkbox--checked" : ""}`}
@@ -169,10 +159,8 @@ export default function TodoList() {
                 )}
               </button>
 
-              {/* Task text */}
               <span className="tf-item-text">{todo.task}</span>
 
-              {/* Delete */}
               <button
                 id={`delete-${todo.id}`}
                 className="tf-btn-delete"
@@ -191,7 +179,6 @@ export default function TodoList() {
         )}
       </ul>
 
-      {/* Footer actions */}
       {todos.length > 0 && (
         <div className="tf-footer">
           <span className="tf-footer-info">
@@ -213,7 +200,6 @@ export default function TodoList() {
         </div>
       )}
 
-      {/* Attribution */}
       <footer className="tf-attribution">
         Built with
         <span className="tf-heart" aria-label="love">♥</span>
