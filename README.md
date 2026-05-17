@@ -20,21 +20,21 @@
   <tr>
     <td align="center">
       <strong>🏠 Default View</strong><br/>
-      <img src="screenshots/default-view.png" alt="TaskFlow Default View" width="420"/>
+      <img src="Screenshots/default-view.png" alt="TaskFlow Default View" width="420"/>
     </td>
     <td align="center">
       <strong>📋 Multiple Tasks</strong><br/>
-      <img src="screenshots/multiple-tasks.png" alt="TaskFlow with Multiple Tasks" width="420"/>
+      <img src="Screenshots/multiple-tasks.png" alt="TaskFlow with Multiple Tasks" width="420"/>
     </td>
   </tr>
   <tr>
     <td align="center">
       <strong>✅ Completed Filter</strong><br/>
-      <img src="screenshots/completed-filter.png" alt="Completed Tasks Filter" width="420"/>
+      <img src="Screenshots/completed-filter.png" alt="Completed Tasks Filter" width="420"/>
     </td>
     <td align="center">
       <strong>📱 Mobile Responsive</strong><br/>
-      <img src="screenshots/mobile-view.png" alt="Mobile Responsive View" width="210"/>
+      <img src="Screenshots/mobile-view.png" alt="Mobile Responsive View" width="210"/>
     </td>
   </tr>
 </table>
